@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import BaseSnsShare from '~~/components/BaseSnsShare.vue';
 const { path } = useRoute();
-const formatPath = computed(() => {
-  return path.replace(/\/$/, '');
-});
+const { params } = useRoute();
 
 const { data } = await useAsyncData(`recipe-${path}`, () => {
   return queryContent()
     .where({ _partial: false })
-    .where({ _path: formatPath.value })
+    .where({ cookedDate: params.slug[0] })
     .findOne();
 });
 
