@@ -52,9 +52,6 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     // '@nuxtjs/robots',
   ],
-  content: {
-    documentDriven: true,
-  },
   // robots: {
   //   UserAgent: '*',
   //   // Disallow: '',

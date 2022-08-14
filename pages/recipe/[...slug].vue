@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import BaseSnsShare from '~~/components/BaseSnsShare.vue';
 const { path } = useRoute();
-const { page, prev, next } = useContent();
 
 const { data } = await useAsyncData(`recipe-${path}`, () => {
   return queryContent()
@@ -10,7 +9,11 @@ const { data } = await useAsyncData(`recipe-${path}`, () => {
     .findOne();
 });
 
-useContentHead(page);
+const { data: data2 } = await useAsyncData(`surround-${path}`, () => {
+  return queryContent('recipe').where({ _partial: false }).findSurround(path);
+});
+
+const [prev, next] = data2.value;
 
 const uri = 'https://md-meshi.com';
 
@@ -115,8 +118,8 @@ definePageMeta({
 
     <div class="mt-14">
       <ContentRenderer
-        :key="page._id"
-        :value="page"
+        :key="data._id"
+        :value="data"
         class="flex flex-col gap-12 md:gap-14"
       />
     </div>

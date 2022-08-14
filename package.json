@@ -9,13 +9,13 @@
     "lint:fix": "eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/image-edge": "^1.0.0-27628766.3629b9a",
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "@nuxtjs/robots": "^3.0.0-1",
     "nuxt": "^3.0.0-rc.6"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.0.1",
     "@nuxtjs/tailwindcss": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
