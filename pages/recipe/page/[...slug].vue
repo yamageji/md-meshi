@@ -2,7 +2,7 @@
 import { RecipeContent } from '@/types/recipe-content';
 
 const { params } = useRoute();
-const currentPage = computed(() => (params.slug ? Number(params.slug) : 1));
+const currentPage = computed(() => (params.slug ? Number(params.slug[0]) : 1));
 const limit = 10;
 
 const { data } = await useAsyncData(`list-page-${params.slug}`, () => {

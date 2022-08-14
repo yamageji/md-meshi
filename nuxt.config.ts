@@ -6,7 +6,9 @@ const description =
 const uri = 'https://md-meshi.com';
 
 export default defineNuxtConfig({
+  target: 'static',
   app: {
+    buildAssetsDir: '/_nuxt/',
     head: {
       htmlAttrs: {
         lang: 'ja',

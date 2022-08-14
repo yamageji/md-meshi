@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import BaseSnsShare from '~~/components/BaseSnsShare.vue';
 const { path } = useRoute();
+const formatPath = computed(() => {
+  return path.replace(/\/$/, '');
+});
 
 const { data } = await useAsyncData(`recipe-${path}`, () => {
   return queryContent()
     .where({ _partial: false })
-    .where({ _path: path })
+    .where({ _path: formatPath.value })
     .findOne();
 });
 
-const { data: data2 } = await useAsyncData(`surround-${path}`, () => {
+const { data: surroundData } = await useAsyncData(`surround-${path}`, () => {
   return queryContent('recipe').where({ _partial: false }).findSurround(path);
 });
 
-const [prev, next] = data2.value;
+const [prev, next] = surroundData.value;
 
 const uri = 'https://md-meshi.com';
 
