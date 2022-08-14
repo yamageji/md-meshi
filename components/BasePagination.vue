@@ -25,7 +25,7 @@ const pageType = computed(() => {
 });
 
 const getPath = (p: number) => {
-  return `/recipe/${pageType.value}/${p}`;
+  return `/recipe/${pageType.value}/${p}/`;
 };
 
 const activeClass = (p: number) =>
