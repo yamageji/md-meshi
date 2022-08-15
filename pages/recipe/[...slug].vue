@@ -3,16 +3,23 @@ import BaseSnsShare from '~~/components/BaseSnsShare.vue';
 const { path } = useRoute();
 const { params } = useRoute();
 
-const { data } = await useAsyncData(`recipe-${path}`, () => {
+const formatPath = computed(() => path.replace(/\/$/, ''));
+
+const { data } = await useAsyncData(`recipe-${params.slug[0]}`, () => {
   return queryContent()
     .where({ _partial: false })
     .where({ cookedDate: params.slug[0] })
     .findOne();
 });
 
-const { data: surroundData } = await useAsyncData(`surround-${path}`, () => {
-  return queryContent('recipe').where({ _partial: false }).findSurround(path);
-});
+const { data: surroundData } = await useAsyncData(
+  `surround-${params.slug[0]}`,
+  () => {
+    return queryContent('recipe')
+      .where({ _partial: false })
+      .findSurround(formatPath.value);
+  }
+);
 
 const [prev, next] = surroundData.value;
 
