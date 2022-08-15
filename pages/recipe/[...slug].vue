@@ -3,52 +3,60 @@ import BaseSnsShare from '~~/components/BaseSnsShare.vue';
 const { path } = useRoute();
 const { params } = useRoute();
 
-const { data } = await useAsyncData(`recipe-${path}`, () => {
+const formatPath = computed(() => path.replace(/\/$/, ''));
+
+const { data } = await useAsyncData(`recipe-${params.slug[0]}`, () => {
   return queryContent()
     .where({ _partial: false })
     .where({ cookedDate: params.slug[0] })
     .findOne();
 });
 
-const { data: surroundData } = await useAsyncData(`surround-${path}`, () => {
-  return queryContent('recipe').where({ _partial: false }).findSurround(path);
-});
+const { data: surroundData } = await useAsyncData(
+  `surround-${params.slug[0]}`,
+  () => {
+    return queryContent('recipe')
+      .where({ _partial: false })
+      .findSurround(formatPath.value);
+  }
+);
 
 const [prev, next] = surroundData.value;
 
 const uri = 'https://md-meshi.com';
 
-useHead({
-  meta: [
-    {
-      name: 'description',
-      content: `markdown飯：${data.value.title}のレシピ`,
-    },
-    { name: 'og:title', content: `${data.value.title} | markdown飯` },
-    {
-      hid: 'og:title',
-      property: 'og:title',
-      content: `${data.value.title} | markdown飯`,
-    },
-    {
-      hid: 'og:description',
-      property: 'og:description',
-      content: `markdown飯：${data.value.title}のレシピ`,
-    },
-    { hid: 'og:type', property: 'og:type', content: 'article' },
-    {
-      hid: 'og:url',
-      property: 'og:url',
-      content: `${uri}${path}`,
-    },
-    {
-      hid: 'og:image',
-      property: 'og:image',
-      content: `${uri}/images${path}.webp`,
-    },
-    { name: 'twitter:card', content: 'summary' },
-  ],
-});
+// useHead({
+//   title: `${data.value.title} | markdown飯`,
+//   meta: [
+//     {
+//       name: 'description',
+//       content: `markdown飯：${data.value.title}のレシピ`,
+//     },
+//     { name: 'og:title', content: `${data.value.title} | markdown飯` },
+//     {
+//       hid: 'og:title',
+//       property: 'og:title',
+//       content: `${data.value.title} | markdown飯`,
+//     },
+//     {
+//       hid: 'og:description',
+//       property: 'og:description',
+//       content: `markdown飯：${data.value.title}のレシピ`,
+//     },
+//     { hid: 'og:type', property: 'og:type', content: 'article' },
+//     {
+//       hid: 'og:url',
+//       property: 'og:url',
+//       content: `${uri}${path}`,
+//     },
+//     {
+//       hid: 'og:image',
+//       property: 'og:image',
+//       content: `${uri}/images${path}.webp`,
+//     },
+//     { name: 'twitter:card', content: 'summary' },
+//   ],
+// });
 definePageMeta({
   layout: 'recipe',
 });

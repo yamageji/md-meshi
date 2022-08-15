@@ -17,7 +17,7 @@
       class="z-10 mx-auto mt-10 flex w-full max-w-4xl grow flex-col md:mt-12 md:flex-row md:gap-8"
     >
       <div class="basis-9/12">
-        <NuxtPage />
+        <slot />
       </div>
       <div class="mt-8 basis-3/12 md:mt-[72px]">
         <TheAside class="md:top-44" />
