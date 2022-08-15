@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   ],
   // robots: {
   //   UserAgent: '*',
-  //   // Disallow: '',
+  // Disallow: '',
   // },
 
   buildModules: ['@nuxtjs/google-fonts'],
