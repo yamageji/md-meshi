@@ -18,38 +18,38 @@ const [prev, next] = surroundData.value;
 
 const uri = 'https://md-meshi.com';
 
-useHead({
-  title: `${data.value.title} | markdown飯`,
-  meta: [
-    {
-      name: 'description',
-      content: `markdown飯：${data.value.title}のレシピ`,
-    },
-    { name: 'og:title', content: `${data.value.title} | markdown飯` },
-    {
-      hid: 'og:title',
-      property: 'og:title',
-      content: `${data.value.title} | markdown飯`,
-    },
-    {
-      hid: 'og:description',
-      property: 'og:description',
-      content: `markdown飯：${data.value.title}のレシピ`,
-    },
-    { hid: 'og:type', property: 'og:type', content: 'article' },
-    {
-      hid: 'og:url',
-      property: 'og:url',
-      content: `${uri}${path}`,
-    },
-    {
-      hid: 'og:image',
-      property: 'og:image',
-      content: `${uri}/images${path}.webp`,
-    },
-    { name: 'twitter:card', content: 'summary' },
-  ],
-});
+// useHead({
+//   title: `${data.value.title} | markdown飯`,
+//   meta: [
+//     {
+//       name: 'description',
+//       content: `markdown飯：${data.value.title}のレシピ`,
+//     },
+//     { name: 'og:title', content: `${data.value.title} | markdown飯` },
+//     {
+//       hid: 'og:title',
+//       property: 'og:title',
+//       content: `${data.value.title} | markdown飯`,
+//     },
+//     {
+//       hid: 'og:description',
+//       property: 'og:description',
+//       content: `markdown飯：${data.value.title}のレシピ`,
+//     },
+//     { hid: 'og:type', property: 'og:type', content: 'article' },
+//     {
+//       hid: 'og:url',
+//       property: 'og:url',
+//       content: `${uri}${path}`,
+//     },
+//     {
+//       hid: 'og:image',
+//       property: 'og:image',
+//       content: `${uri}/images${path}.webp`,
+//     },
+//     { name: 'twitter:card', content: 'summary' },
+//   ],
+// });
 definePageMeta({
   layout: 'recipe',
 });
