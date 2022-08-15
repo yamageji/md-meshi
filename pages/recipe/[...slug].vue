@@ -23,7 +23,7 @@ const { data: surroundData } = await useAsyncData(
 
 const [prev, next] = surroundData.value;
 
-const uri = 'https://md-meshi.com';
+// const uri = 'https://md-meshi.com';
 
 // useHead({
 //   title: `${data.value.title} | markdown飯`,
@@ -73,8 +73,8 @@ definePageMeta({
     <div class="mt-4 flex flex-col items-start gap-6 sm:mt-6 sm:flex-row">
       <img
         format="webp"
-        width="500"
-        height="500"
+        width="490"
+        height="490"
         :src="`/images/${data.photo}`"
         :alt="`写真：${data.title}`"
         class="col-start-1 row-start-1 w-full rounded-md object-cover shadow-md shadow-shadow-primary sm:w-64"

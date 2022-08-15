@@ -5,7 +5,9 @@
     <div
       class="sticky top-0 z-50 -mx-4 grow-0 border-b border-border-secondary bg-gray-50/80 px-4 backdrop-blur-lg md:-mx-8 md:px-8"
     >
-      <TheHeader />
+      <div class="mx-auto max-w-5xl">
+        <TheHeader />
+      </div>
     </div>
 
     <div class="z-10 mx-auto mt-10 flex w-full max-w-md grow flex-col gap-8">
