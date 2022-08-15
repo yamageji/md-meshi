@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
                 height="128"
                 width="128"
                 format="webp"
-                :src="`/images/${content.photo}`"
+                :src="`/images/small/s-${content.photo}`"
                 :alt="`写真：${content.title}`"
                 class="min-h-full w-24 rounded-md object-cover drop-shadow sm:w-32"
               />
