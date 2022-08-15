@@ -1,14 +1,12 @@
 import { defineNuxtConfig } from 'nuxt';
 
-const title = 'markdown 飯';
+const title = 'markdown飯';
 const description =
   'markdown飯はレシピ日記です。作った料理のレシピと日記を掲載しています。コンテンツ管理に"Nuxt Content v2"を利用して、markdown書式で記事を書いています。';
 const uri = 'https://md-meshi.com';
 
 export default defineNuxtConfig({
-  target: 'static',
   app: {
-    buildAssetsDir: '/_nuxt/',
     head: {
       htmlAttrs: {
         lang: 'ja',

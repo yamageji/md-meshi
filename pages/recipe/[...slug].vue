@@ -19,6 +19,7 @@ const [prev, next] = surroundData.value;
 const uri = 'https://md-meshi.com';
 
 useHead({
+  title: `${data.value.title} | markdown飯`,
   meta: [
     {
       name: 'description',

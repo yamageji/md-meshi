@@ -9,7 +9,7 @@
     </div>
 
     <div class="z-10 mx-auto mt-10 flex w-full max-w-md grow flex-col gap-8">
-      <NuxtPage />
+      <slot />
       <div class="flex flex-col gap-3">
         <h3 class="text-base font-bold">● 書いた人</h3>
         <AboutProfile />
