@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         {
           hid: 'og:image',
           property: 'og:image',
-          content: uri + '/images/2022-06-19.webp',
+          content: uri + '/images/2022-08-07.webp',
         },
         { name: 'twitter:card', content: 'summary' },
       ],

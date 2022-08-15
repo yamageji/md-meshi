@@ -26,36 +26,37 @@ const [prev, next] = surroundData.value;
 const pageTitle = computed(() => data.value.title);
 const uri = 'https://md-meshi.com';
 
-console.log(`${uri}/images/${params.slug[0]}.webp`);
+const ogUrl = computed(() => `${uri}${formatPath.value}`);
+const ogImage = computed(() => `${uri}/images/${params.slug[0]}.webp`);
 
 useHead({
   title: `${pageTitle.value} | markdown飯`,
   meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: `markdown飯：${pageTitle.value}のレシピです。`,
+    },
     {
       hid: 'og:title',
       property: 'og:title',
       content: `${pageTitle.value} | markdown飯`,
     },
     {
-      hid: 'description',
-      name: 'description',
+      hid: 'og:description',
+      property: 'og:description',
       content: `markdown飯：${pageTitle.value}のレシピです。`,
     },
     { hid: 'og:type', property: 'og:type', content: 'article' },
     {
       hid: 'og:url',
       property: 'og:url',
-      content: `${uri}${formatPath.value}`,
+      content: ogUrl.value,
     },
     {
       hid: 'og:image',
       property: 'og:image',
-      content: `${uri}/images${path}.webp`,
-    },
-    {
-      hid: 'og:description',
-      property: 'og:description',
-      content: `markdown飯：${pageTitle.value}のレシピです。`,
+      content: ogImage.value,
     },
   ],
 });
