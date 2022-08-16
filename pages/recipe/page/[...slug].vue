@@ -41,8 +41,8 @@ definePageMeta({
   <main>
     <BaseHeadline>新着</BaseHeadline>
     <div>
-      <BaseRecipeCard :data="data" />
-      <div class="mt-4 sm:mt-8">
+      <BaseRecipeCard :data="data" class="" />
+      <div class="mt-12">
         <BasePagination type="page" :pager="pager" :current="currentPage" />
       </div>
     </div>

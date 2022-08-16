@@ -1,8 +1,6 @@
 <template>
   <aside class="w-full md:sticky">
-    <div>
-      <TheMonthlyArchive />
-    </div>
+    <TheMonthlyArchive />
     <div class="mt-10 md:mt-8">
       <TheCategoryNavigation />
     </div>

@@ -19,7 +19,7 @@
       <div class="basis-9/12">
         <slot />
       </div>
-      <div class="mt-8 basis-3/12 md:mt-[72px]">
+      <div class="mt-16 basis-3/12 md:mt-[72px]">
         <TheAside class="md:top-44" />
       </div>
     </div>
