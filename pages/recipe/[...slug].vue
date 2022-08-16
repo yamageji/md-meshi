@@ -33,28 +33,23 @@ useHead({
   title: `${pageTitle.value} | markdown飯`,
   meta: [
     {
-      hid: 'description',
       name: 'description',
       content: `markdown飯：${pageTitle.value}のレシピです。`,
     },
     {
-      hid: 'og:title',
       property: 'og:title',
       content: `${pageTitle.value} | markdown飯`,
     },
     {
-      hid: 'og:description',
       property: 'og:description',
       content: `markdown飯：${pageTitle.value}のレシピです。`,
     },
-    { hid: 'og:type', property: 'og:type', content: 'article' },
+    { property: 'og:type', content: 'article' },
     {
-      hid: 'og:url',
       property: 'og:url',
       content: ogUrl.value,
     },
     {
-      hid: 'og:image',
       property: 'og:image',
       content: ogImage.value,
     },
@@ -75,7 +70,6 @@ definePageMeta({
 
     <div class="mt-4 flex flex-col items-start gap-6 sm:mt-6 sm:flex-row">
       <img
-        format="webp"
         width="490"
         height="490"
         :src="`/images/${data.photo}`"
@@ -87,7 +81,7 @@ definePageMeta({
         <div class="text-sm">
           <p class="flex items-center">
             <BaseIcon
-              :icon-name="'calendar'"
+              icon-name="calendar"
               :height="15"
               :width="15"
               class="mr-1"
@@ -97,12 +91,7 @@ definePageMeta({
             作った日：<span class="font-w-sans">{{ data.cookedDate }}</span>
           </p>
           <p class="mt-1 flex items-center">
-            <BaseIcon
-              :icon-name="'timer'"
-              :height="15"
-              :width="15"
-              class="mr-1"
-            >
+            <BaseIcon icon-name="timer" :height="15" :width="15" class="mr-1">
               <IconTimer />
             </BaseIcon>
             調理時間：<span class="font-w-sans">{{ data.cookingTime }}</span>

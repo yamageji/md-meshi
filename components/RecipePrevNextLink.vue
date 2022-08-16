@@ -42,7 +42,8 @@ const directionBorderClass = computed(() => {
           class="-my-1 flex items-center border-border-tertiary duration-150 group-hover:border-accent-primary"
         >
           <BaseIcon
-            :icon-name="'left arrow'"
+            :id="1"
+            icon-name="left-arrow"
             :width="18"
             :height="18"
             class="duration-150 group-hover:text-accent-primary"

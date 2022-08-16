@@ -15,7 +15,7 @@
           <BaseIcon
             :width="28"
             :height="28"
-            :icon-name="'GitHub'"
+            icon-name="GitHub"
             :icon-id="0"
             :icon-color="'currentColor'"
             class="w-6 text-text-secondary opacity-80 duration-150 hover:opacity-100 sm:w-7"

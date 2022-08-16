@@ -3,12 +3,10 @@ import { RecipeContent } from '@/types/recipe-content';
 
 type Props = {
   data: RecipeContent[];
-  accentColor?: 'green' | 'pink' | '';
 };
 
-const props = withDefaults(defineProps<Props>(), {
-  accentColor: '',
-});
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const props = defineProps<Props>();
 </script>
 
 <template>
@@ -25,28 +23,15 @@ const props = withDefaults(defineProps<Props>(), {
               <img
                 height="128"
                 width="128"
-                format="webp"
                 :src="`/images/small/s-${content.photo}`"
                 :alt="`写真：${content.title}`"
                 class="min-h-full w-24 rounded-md object-cover drop-shadow sm:w-32"
               />
             </figure>
-            <!-- <figure class="shrink-0" v-else>
-            <nuxt-img
-              height="128"
-              width="128"
-              format="webp"
-              src="`/images/noimages"
-              alt="no images"
-              class="min-h-full w-32 rounded-md object-cover drop-shadow"
-            />
-          </figure> -->
+
             <div class="flex flex-col gap-3 py-1 pr-1 sm:gap-4 sm:pr-2">
               <div class="flex items-center gap-2 sm:gap-3">
-                <BaseDateBadge
-                  :date="content.cookedDate"
-                  :accent-color="props.accentColor"
-                />
+                <BaseDateBadge :date="content.cookedDate" />
                 <h2 class="text-md leading-snug sm:text-xl">
                   {{ content.title }}
                 </h2>

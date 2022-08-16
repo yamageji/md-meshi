@@ -15,25 +15,21 @@ export default defineNuxtConfig({
       title,
       meta: [
         {
-          hid: 'description',
           name: 'description',
           content: description,
         },
         {
-          hid: 'og:site_name',
           property: 'og:site_name',
           content: title,
         },
-        { hid: 'og:type', property: 'og:type', content: 'website' },
-        { hid: 'og:url', property: 'og:url', content: uri },
-        { hid: 'og:title', property: 'og:title', content: title },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: uri },
+        { property: 'og:title', content: title },
         {
-          hid: 'og:description',
           property: 'og:description',
           content: description,
         },
         {
-          hid: 'og:image',
           property: 'og:image',
           content: uri + '/images/2022-08-07.webp',
         },

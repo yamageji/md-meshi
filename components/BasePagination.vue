@@ -41,7 +41,7 @@ const activeClass = (p: number) =>
         :to="getPath(current - 1)"
         class="flex h-8 w-8 items-center justify-center rounded-full hover:text-accent-primary sm:h-10 sm:w-10"
       >
-        <BaseIcon :icon-name="'left arrow'" :width="18" :height="18">
+        <BaseIcon icon-name="left-arrow" :width="18" :height="18">
           <iconLeftArrow />
         </BaseIcon>
       </nuxt-link>
@@ -80,7 +80,7 @@ const activeClass = (p: number) =>
         :to="getPath(current + 1)"
         class="flex h-8 w-8 items-center justify-center rounded-full hover:text-accent-primary sm:h-10 sm:w-10"
       >
-        <BaseIcon :icon-name="'right arrow'" :width="18" :height="18">
+        <BaseIcon icon-name="right-arrow" :width="18" :height="18">
           <iconRightArrow />
         </BaseIcon>
       </nuxt-link>

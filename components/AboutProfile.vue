@@ -25,7 +25,7 @@
           target="_blank"
           rel="noopener"
         >
-          <BaseIcon :width="22" :height="22" :icon-name="'github'"
+          <BaseIcon :width="22" :height="22" icon-name="github"
             ><IconGithub
           /></BaseIcon>
         </a>
@@ -39,7 +39,7 @@
           target="_blank"
           rel="noopener"
         >
-          <BaseIcon :width="22" :height="22" :icon-name="'twitter'"
+          <BaseIcon :width="22" :height="22" icon-name="twitter"
             ><IconTwitter
           /></BaseIcon>
         </a>
