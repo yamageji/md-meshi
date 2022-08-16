@@ -136,9 +136,9 @@ definePageMeta({
       />
     </div>
 
-    <BaseSnsShare :text="data.title" class="mt-16" />
+    <BaseSnsShare :text="data.title" class="mt-14" />
 
-    <div class="mt-20 grid grid-cols-2 gap-4">
+    <div class="mt-14 grid grid-cols-2 gap-4">
       <RecipePrevNextLink
         v-if="prev"
         :data="prev"

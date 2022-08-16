@@ -35,7 +35,7 @@ const activeClass = (p: number) =>
 </script>
 
 <template>
-  <ul class="flex items-center justify-center gap-2 p-8 text-sm sm:text-base">
+  <ul class="flex items-center justify-center gap-2 text-sm sm:text-base">
     <li v-if="current > 1">
       <nuxt-link
         :to="getPath(current - 1)"

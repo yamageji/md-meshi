@@ -68,7 +68,7 @@ definePageMeta({
       「{{ categoryText }}」のレシピがみつかりませんでした。
     </div>
 
-    <div class="mt-4 sm:mt-8">
+    <div class="mt-12">
       <BasePagination
         :pager="pager"
         type="category"
