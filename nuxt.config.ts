@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:image',
-          content: uri + '/images/2022-08-07.webp',
+          content: uri + '/md-meshi-ogp.png',
         },
         { name: 'twitter:card', content: 'summary' },
       ],
