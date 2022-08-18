@@ -6,7 +6,7 @@
           <img
             src="/md-meshi-rogo_draft.svg"
             alt="markdown飯"
-            class="w-42 sm:w-48"
+            class="w-40 sm:w-48"
           />
         </h1>
       </NuxtLink>
