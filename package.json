@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.6.7",
+    "@heroicons/vue": "^1.0.6",
     "@nuxt/image-edge": "^1.0.0-27628766.3629b9a",
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "@nuxtjs/robots": "^3.0.0-1",

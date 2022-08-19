@@ -1,8 +1,28 @@
 <script lang="ts" setup>
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+import { PageCategory } from './HeaderNavigation.vue';
+
+import { ref } from 'vue';
+import {
+  Listbox,
+  ListboxLabel,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue';
+// import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid';
+
+const people = [
+  { name: 'Wade Cooper' },
+  { name: 'Arlene Mccoy' },
+  { name: 'Devon Webb' },
+  { name: 'Tom Cook' },
+  { name: 'Tanya Fox' },
+  { name: 'Hellen Schmidt' },
+];
+const selectedPerson = ref(people[0]);
 
 type Props = {
-  categories: Array<{ name: string; path: string }>;
+  categories: Array<PageCategory>;
 };
 
 const props = defineProps<Props>();
@@ -10,59 +30,58 @@ const props = defineProps<Props>();
 
 <template>
   <div>
-    <Menu as="div" class="relative inline-block text-left">
-      <MenuButton
-        class="inline-flex w-full items-center justify-center gap-2 py-2 text-sm font-bold text-text-primary hover:bg-opacity-30"
-      >
-        Options
-        <BaseIcon icon-name="right-arrow" :width="16" :height="16">
-          <iconRightArrow />
-        </BaseIcon>
-      </MenuButton>
-
-      <transition
-        enter-active-class="transition duration-100 ease-out"
-        enter-from-class="transform scale-95 opacity-0"
-        enter-to-class="transform scale-100 opacity-100"
-        leave-active-class="transition duration-75 ease-in"
-        leave-from-class="transform scale-100 opacity-100"
-        leave-to-class="transform scale-95 opacity-0"
-      >
-        <MenuItems
-          class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-border-secondary rounded-md border border-border-secondary bg-surface-tertiary shadow-lg"
+    <Listbox v-model="selectedPerson">
+      <div class="relative mt-1">
+        <ListboxButton
+          class="focus-visible:border-indigo-500 focus-visible:ring-offset-orange-300 relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 sm:text-sm"
         >
-          <div class="px-1 py-1">
-            <MenuItem
-              v-for="category in props.categories"
-              :key="category.name"
-              v-slot="{ active }"
-            >
-              <NuxtLink
-                :to="category.path"
-                :class="[
-                  active ? 'bg-surface-quaternary text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                ]"
-              >
-                {{ category.name }}
-              </NuxtLink>
-            </MenuItem>
-          </div>
+          <span class="block truncate">{{ selectedPerson.name }}</span>
+          <span
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+          >
+            <SelectorIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </span>
+        </ListboxButton>
 
-          <div class="px-1 py-1">
-            <MenuItem v-slot="{ active }">
-              <button
+        <transition
+          leave-active-class="transition duration-100 ease-in"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
+        >
+          <ListboxOptions
+            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          >
+            <ListboxOption
+              v-for="person in people"
+              v-slot="{ active, selected }"
+              :key="person.name"
+              :value="person"
+              as="template"
+            >
+              <li
                 :class="[
-                  active ? 'bg-surface-quaternary text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                  active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+                  'relative cursor-default select-none py-2 pl-10 pr-4',
                 ]"
               >
-                GitHub
-              </button>
-            </MenuItem>
-          </div>
-        </MenuItems>
-      </transition>
-    </Menu>
+                <span
+                  :class="[
+                    selected ? 'font-medium' : 'font-normal',
+                    'block truncate',
+                  ]"
+                  >{{ person.name }}</span
+                >
+                <span
+                  v-if="selected"
+                  class="text-amber-600 absolute inset-y-0 left-0 flex items-center pl-3"
+                >
+                  <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                </span>
+              </li>
+            </ListboxOption>
+          </ListboxOptions>
+        </transition>
+      </div>
+    </Listbox>
   </div>
 </template>

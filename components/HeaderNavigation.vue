@@ -1,11 +1,18 @@
 <script setup lang="ts">
+export type PageCategory = {
+  name: string;
+  path: string;
+};
+
 import DropDownMenu from './DropDownMenu.vue';
+
 const route = useRoute();
 
-const pageCategory = ref([
+const pageCategory: Array<PageCategory> = [
   { name: 'recipe', path: '/recipe' },
   { name: 'about', path: '/about' },
-]);
+];
+
 // active-classのみで処理したいが上手くいかないので応急処置
 const customActiveClass = (name: string) =>
   route.path.split('/')[1] === name
