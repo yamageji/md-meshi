@@ -21,7 +21,6 @@ definePageMeta({
 
 <template>
   <main>
-    <BaseHeadline> おすすめ </BaseHeadline>
     <BaseRecipeCard :data="data" />
   </main>
 </template>

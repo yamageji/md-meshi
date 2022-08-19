@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DropDownMenu from './DropDownMenu.vue';
 const route = useRoute();
 
 const pageCategory = ref([
@@ -32,5 +33,6 @@ const customActiveClass = (name: string) =>
         </NuxtLink>
       </li>
     </ul>
+    <DropDownMenu />
   </nav>
 </template>

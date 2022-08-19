@@ -39,7 +39,6 @@ definePageMeta({
 
 <template>
   <main>
-    <BaseHeadline>新着</BaseHeadline>
     <div>
       <BaseRecipeCard :data="data" class="" />
       <div class="mt-12">
