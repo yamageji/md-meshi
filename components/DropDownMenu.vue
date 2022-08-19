@@ -32,7 +32,11 @@ const props = defineProps<Props>();
           class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-border-secondary rounded-md border border-border-secondary bg-surface-tertiary shadow-lg"
         >
           <div class="px-1 py-1">
-            <MenuItem v-for="category in props.categories" v-slot="{ active }">
+            <MenuItem
+              v-for="category in props.categories"
+              :key="category.name"
+              v-slot="{ active }"
+            >
               <NuxtLink
                 :to="category.path"
                 :class="[

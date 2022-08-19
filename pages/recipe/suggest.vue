@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RecipeContent } from '@/types/recipe-content';
-import BaseHeadline from '~~/components/BaseHeadline.vue';
 
 const { data } = await useAsyncData('suggest', () => {
   return queryContent<RecipeContent>('recipe')

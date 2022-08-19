@@ -40,7 +40,7 @@ module.exports = {
         secondary: 'var(--color-gray-700)',
         tertiary: 'var(--color-gray-500)',
         accent: {
-          primary: 'var(--color-red-400)',
+          primary: 'var(--color-red-500)',
           secondary: 'var(--color-red-400)',
         },
       },
