@@ -52,6 +52,6 @@ const customActiveClass = (name: string) =>
       </NuxtLink>
     </nav>
 
-    <DropDownMenu class="sm:hidden" />
+    <DropDownMenu class="sm:hidden" :categories="pageCategory" />
   </div>
 </template>

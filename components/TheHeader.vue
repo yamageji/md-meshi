@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="flex h-[4.5rem] items-center justify-between gap-4 sm:h-20">
+    <div class="flex h-[4.5rem] items-center gap-4 sm:h-20 sm:justify-between">
       <NuxtLink to="/">
         <h1 class="test text-2xl font-bold">
           <img
@@ -10,6 +10,7 @@
           />
         </h1>
       </NuxtLink>
+      <span class="sm:hidden">/</span>
       <HeaderNavigation />
     </div>
   </header>
