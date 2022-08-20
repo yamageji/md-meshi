@@ -4,8 +4,6 @@ export type PageCategory = {
   path: string;
 };
 
-import DropDownMenu from './DropDownMenu.vue';
-
 const route = useRoute();
 
 const pageCategory: Array<PageCategory> = [
@@ -59,6 +57,6 @@ const customActiveClass = (name: string) =>
       </NuxtLink>
     </nav>
 
-    <DropDownMenu class="sm:hidden" :categories="pageCategory" />
+    <BaseListBox class="sm:hidden" :categories="pageCategory" />
   </div>
 </template>

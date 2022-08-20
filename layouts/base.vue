@@ -14,12 +14,12 @@
     </div>
 
     <div
-      class="z-10 mx-auto mt-10 flex w-full max-w-4xl grow flex-col md:mt-12 md:flex-row md:gap-8"
+      class="z-10 mx-auto mt-8 flex w-full max-w-4xl grow flex-col md:mt-10 md:flex-row md:gap-8"
     >
       <div class="basis-9/12">
         <slot />
       </div>
-      <div class="mt-16 basis-3/12 md:mt-[72px]">
+      <div class="mt-16 basis-3/12 md:mt-5">
         <TheAside class="md:top-44" />
       </div>
     </div>
