@@ -14,7 +14,7 @@ const pageCategory: Array<PageCategory> = [
 // active-classのみで処理したいが上手くいかないので応急処置
 const customActiveClass = (name: string) =>
   route.path.split('/')[1] === name
-    ? 'text-accent-primary bg-surface-secondary text-accent-primary bg-surface-secondary'
+    ? 'text-accent-primary bg-surface-secondary'
     : '';
 </script>
 
@@ -31,7 +31,7 @@ const customActiveClass = (name: string) =>
         >
           <NuxtLink
             :to="category.path"
-            active-class="text-accent-primary bg-surface-secondary"
+            active-class="text-text-accent-primary bg-surface-secondary"
             :class="customActiveClass(category.name)"
             class="rounded-full py-1.5 px-3 font-bold tracking-wide duration-150 hover:bg-surface-secondary"
           >
@@ -50,7 +50,7 @@ const customActiveClass = (name: string) =>
           icon-name="GitHub"
           :icon-id="0"
           :icon-color="'currentColor'"
-          class="w-7 text-text-secondary opacity-80 duration-150 hover:opacity-100"
+          class="h-6 w-6 text-text-secondary opacity-80 duration-150 hover:opacity-100"
         >
           <IconGithub />
         </BaseIcon>
