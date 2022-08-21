@@ -60,4 +60,8 @@ export default defineNuxtConfig({
       'Work Sans': [400, 500, 700],
     },
   },
+
+  build: {
+    transpile: ['@headlessui/vue', '@heroicons/vue'],
+  },
 });
