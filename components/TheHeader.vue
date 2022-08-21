@@ -4,7 +4,9 @@
       <NuxtLink to="/">
         <h1 class="test text-2xl font-bold">
           <img
-            src="/md-meshi-rogo_draft.svg"
+            width="192"
+            height="40"
+            src="/md-meshi-rogo.svg"
             alt="markdown飯"
             class="w-40 sm:w-48"
           />

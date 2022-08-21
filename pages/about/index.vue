@@ -11,11 +11,7 @@ definePageMeta({
 <template>
   <main class="grow basis-7/12 py-8">
     <div class="flex flex-col items-center justify-center gap-20">
-      <img
-        src="/md-meshi-rogo_draft.svg"
-        alt="markdown飯"
-        class="w-80 sm:w-80"
-      />
+      <img src="/md-meshi-rogo.svg" alt="markdown飯" class="w-80 sm:w-80" />
     </div>
     <p class="mt-16 leading-relaxed text-text-secondary">
       markdown飯はレシピ日記です。
