@@ -19,10 +19,13 @@ const props = defineProps<Props>();
 
 const { path } = useRoute();
 const initialCategory = computed(() => {
+  // ここの条件分岐を意味が分かるようにリファクタリングする
   if (path.split('/')[1] === props.categories[0].name) {
     return props.categories[0];
-  } else {
+  } else if (path.split('/')[1] === props.categories[1].name) {
     return props.categories[1];
+  } else {
+    return props.categories[0];
   }
 });
 
@@ -37,7 +40,7 @@ const selectedCategory = ref(initialCategory);
       >/</span
     >
 
-    <Listbox v-model="selectedCategory">
+    <Listbox v-slot="{ open }" v-model="selectedCategory">
       <div class="relative">
         <ListboxButton
           class="group relative w-full cursor-pointer py-2 pr-7 font-bold"
@@ -47,8 +50,13 @@ const selectedCategory = ref(initialCategory);
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center"
           >
             <ChevronDownIcon
-              v-if="selectedCategory.name"
+              v-if="selectedCategory.name && !open"
               class="h-5 w-5 pt-0.5 text-text-tertiary group-hover:text-text-primary"
+              aria-hidden="true"
+            />
+            <ChevronDownIcon
+              v-if="selectedCategory.name && open"
+              class="h-5 w-5 rotate-180 pb-0.5 group-hover:text-text-primary"
               aria-hidden="true"
             />
           </span>
