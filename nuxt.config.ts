@@ -25,10 +25,6 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  runtimeConfig: {
-    googleAnalyticsId: '',
-  },
-
   css: ['@/assets/css/main.css'],
 
   modules: [
