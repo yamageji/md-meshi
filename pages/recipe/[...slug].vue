@@ -42,7 +42,7 @@ useHead({
     },
     {
       property: 'og:description',
-      content: `markdown飯：${pageTitle.value}のレシピです。`,
+      content: `${pageTitle.value}のレシピです。`,
     },
     { property: 'og:type', content: 'article' },
     {
