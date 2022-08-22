@@ -1,5 +1,4 @@
 import { defineNuxtPlugin } from '#app';
-const config = useRuntimeConfig();
 import VueGtag from 'vue-gtag';
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -10,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     {
       appName: 'markdown飯',
       pageTrackerScreenviewEnabled: true,
-      config: { id: config.googleAnalyticsId },
+      config: { id: 'G-HS5CCBT4HN' },
     },
     router
   );
