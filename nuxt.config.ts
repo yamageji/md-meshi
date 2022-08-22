@@ -3,7 +3,6 @@ import { defineNuxtConfig } from 'nuxt';
 const title = 'markdown飯';
 const description =
   'markdown飯はレシピ日記です。作った料理のレシピと日記を掲載しています。コンテンツ管理に"Nuxt Content v2"を利用して、markdown書式で記事を書いています。';
-const uri = 'https://md-meshi.com';
 
 export default defineNuxtConfig({
   app: {
@@ -18,22 +17,6 @@ export default defineNuxtConfig({
           name: 'description',
           content: description,
         },
-        {
-          property: 'og:site_name',
-          content: title,
-        },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: uri },
-        { property: 'og:title', content: title },
-        {
-          property: 'og:description',
-          content: description,
-        },
-        {
-          property: 'og:image',
-          content: uri + '/md-meshi-ogp.png',
-        },
-        { name: 'twitter:card', content: 'summary' },
       ],
     },
   },
@@ -48,10 +31,6 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     // '@nuxtjs/robots',
   ],
-  // robots: {
-  //   UserAgent: '*',
-  // Disallow: '',
-  // },
 
   buildModules: ['@nuxtjs/google-fonts'],
   googleFonts: {
