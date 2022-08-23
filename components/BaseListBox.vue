@@ -78,7 +78,7 @@ const selectedCategory = ref(initialCategory);
               :value="category"
               as="template"
             >
-              <NuxtLink :to="category.path">
+              <a :href="category.path">
                 <div
                   :class="[
                     active ? 'bg-surface-primary' : '',
@@ -96,12 +96,12 @@ const selectedCategory = ref(initialCategory);
                     <CheckIcon class="h-5 w-5 pt-0.5" aria-hidden="true" />
                   </span>
                 </div>
-              </NuxtLink>
+              </a>
             </ListboxOption>
 
-            <NuxtLink
+            <a
               class="flex items-center"
-              to="https://github.com/K-shigehito/md-meshi"
+              href="https://github.com/K-shigehito/md-meshi"
             >
               <div
                 class="relative cursor-pointer select-none rounded-md py-2 pl-9 pr-9 hover:bg-surface-primary"
@@ -111,7 +111,7 @@ const selectedCategory = ref(initialCategory);
                 </span>
                 <span> GitHub </span>
               </div>
-            </NuxtLink>
+            </a>
           </ListboxOptions>
         </transition>
       </div>
