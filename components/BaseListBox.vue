@@ -50,12 +50,12 @@ const selectedCategory = ref(initialCategory);
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center"
           >
             <ChevronDownIcon
-              v-if="selectedCategory.name && !open"
+              v-show="selectedCategory.name && !open"
               class="h-5 w-5 pt-0.5 text-text-tertiary group-hover:text-text-primary"
               aria-hidden="true"
             />
             <ChevronDownIcon
-              v-if="selectedCategory.name && open"
+              v-show="selectedCategory.name && open"
               class="h-5 w-5 rotate-180 pb-0.5 group-hover:text-text-primary"
               aria-hidden="true"
             />
@@ -90,7 +90,7 @@ const selectedCategory = ref(initialCategory);
                     >{{ category.name }}</span
                   >
                   <span
-                    v-if="selected"
+                    v-show="selected"
                     class="absolute inset-y-0 left-0 flex items-center pl-3"
                   >
                     <CheckIcon class="h-5 w-5 pt-0.5" aria-hidden="true" />
