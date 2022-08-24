@@ -28,6 +28,7 @@ module.exports = {
       accent: {
         primary: 'var(--color-red-400)',
         secondary: 'var(--color-red-500)',
+        tertiary: 'var(--color-red-100)',
       },
       surface: {
         primary: 'var(--color-gray-100)',
