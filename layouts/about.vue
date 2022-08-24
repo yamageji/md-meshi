@@ -43,7 +43,7 @@ useHead({
         <h3
           class="mb-2 flex items-center gap-1.5 text-lg font-bold tracking-wider text-text-secondary before:mt-[1.5px] before:inline-block before:h-3 before:w-5 before:rounded-full before:bg-gray-600"
         >
-          書いた人
+          書いている人
         </h3>
         <AboutProfile />
       </div>
