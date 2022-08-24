@@ -73,10 +73,10 @@ const selectedCategory = ref(initialCategory);
           >
             <ListboxOption
               v-for="category in props.categories"
-              v-slot="{ active, selected }"
               :key="category.name"
               :value="category"
               as="template"
+              v-slot="{ active, selected }"
             >
               <a :href="category.path">
                 <div
