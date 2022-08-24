@@ -34,7 +34,7 @@ const aboutContents = [
         作る、食べる、書く。
       </h2>
       <div class="mt-6 flex flex-col items-center sm:mt-10">
-        <img src="md-meshi-rogo_L.svg" alt="markdown飯" class="w-32 sm:w-48" />
+        <img src="/md-meshi-rogo_L.svg" alt="markdown飯" class="w-32 sm:w-48" />
       </div>
       <p
         class="mx-auto mt-6 max-w-[320px] leading-loose text-text-secondary sm:mt-8 sm:max-w-[358px] sm:text-lg sm:leading-loose"

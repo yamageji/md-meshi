@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img
-          src="~/assets/images/shigehito_logo_100.svg"
+          src="/shigehito_logo_100.svg"
           alt="personal rogo"
           width="48"
           height="48"
