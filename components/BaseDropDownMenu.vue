@@ -70,6 +70,7 @@ const selectedCategory = computed(() => {
       >
         <MenuItems
           class="absolute mt-1 rounded-md border border-border-secondary bg-surface-secondary p-2 shadow-lg"
+          as="nav"
         >
           <MenuItem
             v-for="category in linkCategories"
@@ -86,17 +87,17 @@ const selectedCategory = computed(() => {
                 'relative flex w-full cursor-pointer select-none rounded-md py-2 px-4',
               ]"
             >
-              <span class="absolute inset-y-0 left-0 flex items-center">
+              <span class="absolute inset-y-0 left-2 mr-3 flex items-center">
                 <CheckIcon
                   v-show="selectedCategory.name === category.name"
                   class="h-5 w-5 pt-0.5"
                   aria-hidden="true"
                 />
               </span>
-              <span class="ml-3 mr-2">
+              <span class="ml-5 mr-4">
                 {{ category.name }}
               </span>
-              <span class="absolute inset-y-0 right-0 flex items-center">
+              <span class="absolute inset-y-0 right-2 flex items-center">
                 <ExternalLinkIcon
                   v-show="!category.isInternal"
                   class="h-4 w-4"
