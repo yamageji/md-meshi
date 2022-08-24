@@ -2,13 +2,21 @@
 export type PageCategory = {
   name: string;
   path: string;
+  isInternal: boolean;
 };
 
 const route = useRoute();
 
-const pageCategory: Array<PageCategory> = [
-  { name: 'recipe', path: '/recipe' },
-  { name: 'about', path: '/about' },
+const pageCategories: Array<PageCategory> = [
+  { name: 'recipe', path: '/recipe', isInternal: true },
+  { name: 'about', path: '/about', isInternal: true },
+];
+const outerLink: Array<PageCategory> = [
+  {
+    name: 'GitHub',
+    path: 'https://github.com/K-shigehito/md-meshi',
+    isInternal: false,
+  },
 ];
 
 // active-classのみで処理したいが上手くいかないので応急処置
@@ -25,7 +33,7 @@ const customActiveClass = (name: string) =>
         class="flex gap-2 rounded-full bg-surface-tertiary p-1.5 text-sm text-text-secondary"
       >
         <li
-          v-for="(category, index) in pageCategory"
+          v-for="(category, index) in pageCategories"
           :key="index"
           class="flex items-center"
         >
@@ -57,6 +65,10 @@ const customActiveClass = (name: string) =>
       </NuxtLink>
     </nav>
 
-    <BaseListBox class="sm:hidden" :categories="pageCategory" />
+    <BaseDropDownMenu
+      class="sm:hidden"
+      :page-categories="pageCategories"
+      :outer-link="outerLink"
+    />
   </div>
 </template>
