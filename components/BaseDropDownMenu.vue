@@ -33,11 +33,11 @@ const selectedCategory = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center gap-3">
-    <span class="text-sm text-text-secondary sm:hidden" v-if="selectedCategory"
+  <div class="flex items-center gap-3 text-text-secondary">
+    <span v-if="selectedCategory" class="text-sm text-text-secondary sm:hidden"
       >/</span
     >
-    <Menu as="div" v-slot="{ open }">
+    <Menu v-slot="{ open }" as="div">
       <div class="relative">
         <MenuButton
           class="group w-full cursor-pointer py-2 pr-7 text-[0.9375rem] font-bold"
@@ -94,13 +94,18 @@ const selectedCategory = computed(() => {
                   aria-hidden="true"
                 />
               </span>
-              <span class="ml-5 mr-4">
+              <span
+                class="ml-5 mr-4"
+                :class="
+                  selectedCategory.name === category.name ? 'font-bold' : ''
+                "
+              >
                 {{ category.name }}
               </span>
               <span class="absolute inset-y-0 right-2 flex items-center">
                 <ExternalLinkIcon
                   v-show="!category.isInternal"
-                  class="h-4 w-4"
+                  class="h-5 w-5 text-text-secondary"
                   aria-hidden="true"
                 />
               </span>

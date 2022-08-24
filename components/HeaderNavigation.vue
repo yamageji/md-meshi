@@ -67,8 +67,8 @@ const customActiveClass = (name: string) =>
 
     <BaseDropDownMenu
       class="sm:hidden"
-      :pageCategories="pageCategories"
-      :outerLink="outerLink"
+      :page-categories="pageCategories"
+      :outer-link="outerLink"
     />
   </div>
 </template>
