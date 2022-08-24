@@ -25,10 +25,11 @@ definePageMeta({
 </script>
 
 <template>
-  <main>
+  <main class="leading-loose">
     <BaseHeadline>おまかせ一品</BaseHeadline>
-    <p class="mt-8 text-center leading-7">
+    <p class="mx-4 mt-8">
       ボタンを押すと、レシピが一品ランダムで表示されます。
+      献立を考えるのが面倒くさい時などにご利用ください。
     </p>
     <div class="my-8 flex items-center justify-center">
       <button
