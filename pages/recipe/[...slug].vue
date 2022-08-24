@@ -88,13 +88,17 @@ definePageMeta({
             >
               <IconCalendar />
             </BaseIcon>
-            作った日：<span class="font-w-sans">{{ data.cookedDate }}</span>
+            作った日：<span class="mt-0.5 font-w-sans">{{
+              data.cookedDate
+            }}</span>
           </p>
           <p class="mt-1 flex items-center">
             <BaseIcon icon-name="timer" :height="15" :width="15" class="mr-1">
               <IconTimer />
             </BaseIcon>
-            調理時間：<span class="font-w-sans">{{ data.cookingTime }}</span>
+            調理時間：<span class="mt-0.5 font-w-sans"
+              >{{ data.cookingTime }}
+            </span>
             分
           </p>
         </div>
