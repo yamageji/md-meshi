@@ -37,7 +37,7 @@
 
     <p class="text-md mt-5 leading-loose">
       アマチュア Web
-      developerです。本業では本作っています。現在は０歳児と猫２匹の父親として、家事育児に勤しんでいます。
+      developerです。本業は本作りをしています。現在は０歳児と猫２匹の父親として、家事育児に勤しんでいます。
     </p>
   </div>
 </template>
