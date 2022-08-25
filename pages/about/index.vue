@@ -29,35 +29,44 @@ const aboutContents = [
   <main class="grow py-8 leading-relaxed">
     <div class="rounded-lg pb-8 sm:pb-8">
       <h2
-        class="text-center text-2xl font-bold leading-loose tracking-wider text-text-secondary sm:text-4xl"
+        class="text-center text-[1.7rem] font-bold leading-loose tracking-wider text-text-secondary sm:text-4xl"
       >
         作る、食べる、書く。
       </h2>
       <div class="mt-6 flex flex-col items-center sm:mt-10">
-        <img src="/md-meshi-rogo_L.svg" alt="markdown飯" class="w-32 sm:w-48" />
+        <img src="/md-meshi-rogo_L.svg" alt="markdown飯" class="w-36 sm:w-48" />
       </div>
       <p
-        class="mx-auto mt-6 max-w-[320px] leading-loose text-text-secondary sm:mt-8 sm:max-w-[358px] sm:text-lg sm:leading-loose"
+        class="mx-auto mt-6 max-w-[320px] text-center font-bold leading-loose text-text-secondary sm:mt-8 sm:max-w-[358px] sm:text-lg sm:leading-loose"
       >
         markdown飯はレシピ日記です。<br />作った料理と日々の雑感を記録しています。
       </p>
     </div>
 
-    <div class="mt-10 flex flex-col gap-8 sm:mt-12">
+    <div class="mt-12 flex flex-col gap-6 sm:mt-14">
       <div
         v-for="aboutContent in aboutContents"
         :key="aboutContent.title"
-        class="flex items-center gap-4 sm:gap-5"
+        class="flex gap-4 rounded-md bg-surface-secondary p-4 sm:gap-5"
       >
         <div
-          class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-surface-tertiary font-bold text-text-secondary sm:h-24 sm:w-24 sm:text-lg"
+          class="flex h-20 w-20 shrink-0 items-center justify-center rounded-md bg-surface-tertiary font-bold text-text-secondary sm:h-24 sm:w-24 sm:text-lg"
         >
           {{ aboutContent.title }}
         </div>
-        <p class="">
+        <p class="self-center">
           {{ aboutContent.description }}
         </p>
       </div>
+    </div>
+
+    <div class="mt-20 flex flex-col gap-3">
+      <h3
+        class="mb-1 flex items-center gap-1.5 text-lg font-bold tracking-wider text-text-secondary before:mt-[1.5px] before:inline-block before:h-3 before:w-5 before:rounded-full before:bg-gray-600"
+      >
+        作っている人
+      </h3>
+      <AboutProfile />
     </div>
   </main>
 </template>
