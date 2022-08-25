@@ -50,12 +50,12 @@ const borderColorClass = (type: string) => {
     @apply pl-5 -indent-5 before:mr-1  before:content-['・'];
   }
   a {
-    @apply text-accent-primary underline underline-offset-2;
+    @apply text-text-accent-primary underline underline-offset-2;
   }
 }
 .memo {
   h2 {
-    @apply text-accent-primary;
+    @apply text-text-accent-primary;
   }
 }
 .point {

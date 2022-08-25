@@ -27,5 +27,8 @@
       }
     }
   }
+  strong {
+    @apply mx-0.5 text-text-accent-primary;
+  }
 }
 </style>

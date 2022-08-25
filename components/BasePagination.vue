@@ -31,7 +31,7 @@ const getPath = (p: number) => {
 const activeClass = (p: number) =>
   props.current === p + 1
     ? 'text-white bg-accent-primary'
-    : 'text-text-tertiary hover:text-accent-primary';
+    : 'text-text-tertiary hover:text-text-accent-primary';
 </script>
 
 <template>
@@ -39,7 +39,7 @@ const activeClass = (p: number) =>
     <li v-if="current > 1">
       <nuxt-link
         :to="getPath(current - 1)"
-        class="flex h-8 w-8 items-center justify-center rounded-full hover:text-accent-primary sm:h-10 sm:w-10"
+        class="flex h-8 w-8 items-center justify-center rounded-full hover:text-text-accent-primary sm:h-10 sm:w-10"
       >
         <BaseIcon icon-name="left-arrow" :width="18" :height="18">
           <iconLeftArrow />
@@ -78,7 +78,7 @@ const activeClass = (p: number) =>
     <li v-if="current < pager.length">
       <nuxt-link
         :to="getPath(current + 1)"
-        class="flex h-8 w-8 items-center justify-center rounded-full hover:text-accent-primary sm:h-10 sm:w-10"
+        class="flex h-8 w-8 items-center justify-center rounded-full hover:text-text-accent-primary sm:h-10 sm:w-10"
       >
         <BaseIcon icon-name="right-arrow" :width="18" :height="18">
           <iconRightArrow />

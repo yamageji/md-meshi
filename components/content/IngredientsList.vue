@@ -27,10 +27,15 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="postcss">
 .ingredients {
   ul > li {
-    @apply flex items-center gap-3;
-
+    @apply flex items-center gap-y-3;
+    > strong {
+      @apply ml-0.5 mr-2.5 text-text-accent-primary;
+    }
     > ul {
       @apply my-2 border-l-2 border-accent-primary pl-2 before:hidden;
+      > li {
+        @apply flex items-center gap-y-3 before:content-none;
+      }
     }
   }
 }

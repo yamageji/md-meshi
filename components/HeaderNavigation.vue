@@ -22,7 +22,7 @@ const outerLink: Array<PageCategory> = [
 // active-classのみで処理したいが上手くいかないので応急処置
 const customActiveClass = (name: string) =>
   route.path.split('/')[1] === name
-    ? 'text-accent-primary bg-surface-secondary'
+    ? 'text-text-accent-primary bg-surface-secondary'
     : '';
 </script>
 

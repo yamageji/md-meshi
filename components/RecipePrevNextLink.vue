@@ -46,14 +46,14 @@ const directionBorderClass = computed(() => {
             icon-name="left-arrow"
             :width="18"
             :height="18"
-            class="duration-150 group-hover:text-accent-primary"
+            class="duration-150 group-hover:text-text-accent-primary"
           >
             <IconLeftArrow v-if="props.direction === 'prev'" />
             <IconRightArrow v-else-if="props.direction === 'next'" />
           </BaseIcon>
         </div>
         <p
-          class="flex items-center duration-150 group-hover:text-accent-primary"
+          class="flex items-center duration-150 group-hover:text-text-accent-primary"
         >
           {{ data.title }}
         </p>
