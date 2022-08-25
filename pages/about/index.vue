@@ -29,7 +29,7 @@ const aboutContents = [
   <main class="grow py-8 leading-relaxed">
     <div class="rounded-lg pb-8 sm:pb-8">
       <h2
-        class="text-center text-[1.7rem] font-bold leading-loose tracking-wider text-text-secondary sm:text-4xl"
+        class="ml-[0.85rem] text-center text-[1.7rem] font-bold leading-loose tracking-wider text-text-secondary sm:ml-4 sm:text-4xl"
       >
         作る、食べる、書く。
       </h2>
@@ -37,7 +37,7 @@ const aboutContents = [
         <img src="/md-meshi-rogo_L.svg" alt="markdown飯" class="w-36 sm:w-48" />
       </div>
       <p
-        class="mx-auto mt-6 max-w-[320px] text-center font-bold leading-loose text-text-secondary sm:mt-8 sm:max-w-[358px] sm:text-lg sm:leading-loose"
+        class="mx-auto mt-6 ml-2 text-center font-bold leading-loose text-text-secondary sm:mt-8 sm:text-lg sm:leading-loose"
       >
         markdown飯はレシピ日記です。<br />作った料理と日々の雑感を記録しています。
       </p>
@@ -47,7 +47,7 @@ const aboutContents = [
       <div
         v-for="aboutContent in aboutContents"
         :key="aboutContent.title"
-        class="flex gap-4 rounded-md bg-surface-secondary p-4 sm:gap-5"
+        class="flex gap-4 rounded-md border-2 border-border-tertiary p-4 sm:gap-5"
       >
         <div
           class="flex h-20 w-20 shrink-0 items-center justify-center rounded-md bg-surface-tertiary font-bold text-text-secondary sm:h-24 sm:w-24 sm:text-lg"

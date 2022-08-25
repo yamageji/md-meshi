@@ -37,7 +37,7 @@ useHead({
       </div>
     </div>
 
-    <div class="z-10 mx-auto mt-6 w-full max-w-xl grow sm:mt-10">
+    <div class="z-10 mx-auto mt-6 w-full max-w-2xl grow sm:mt-10">
       <slot />
     </div>
 
