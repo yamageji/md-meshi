@@ -33,8 +33,15 @@ const aboutContents = [
       >
         作る、食べる、書く。
       </h2>
-      <div class="mt-6 flex flex-col items-center sm:mt-10">
-        <img src="/md-meshi-rogo_L.svg" alt="markdown飯" class="w-36 sm:w-48" />
+      <div
+        class="mx-auto mt-6 flex w-36 flex-col items-center sm:mt-10 sm:w-48"
+      >
+        <img
+          width="192"
+          height="150"
+          src="/md-meshi-rogo_L.svg"
+          alt="ロゴ：markdown飯"
+        />
       </div>
       <p
         class="mx-auto mt-6 ml-2 text-center font-bold leading-loose text-text-secondary sm:mt-8 sm:text-lg sm:leading-loose"

@@ -4,7 +4,7 @@
       <div class="flex items-center gap-3">
         <img
           src="/shigehito_logo_100.svg"
-          alt="personal rogo"
+          alt="ロゴ：koyama shigehito"
           width="48"
           height="48"
           class="rounded-full"

@@ -69,13 +69,15 @@ definePageMeta({
     </h2>
 
     <div class="mt-4 flex flex-col items-start gap-6 sm:mt-6 sm:flex-row">
-      <img
-        width="490"
-        height="490"
-        :src="`/images/${data.photo}`"
-        :alt="`写真：${data.title}`"
-        class="col-start-1 row-start-1 w-full rounded-md object-cover shadow-md shadow-shadow-primary sm:w-64"
-      />
+      <div class="col-start-1 row-start-1 w-full sm:w-64 sm:shrink-0">
+        <img
+          width="490"
+          height="490"
+          :src="`/images/${data.photo}`"
+          :alt="`写真：${data.title}`"
+          class="rounded-md object-cover shadow-md shadow-shadow-primary"
+        />
+      </div>
 
       <div class="grow">
         <div class="text-sm">
