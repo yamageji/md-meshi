@@ -28,11 +28,11 @@ const aboutContents = [
 <template>
   <main class="grow py-8 leading-relaxed">
     <div class="rounded-lg pb-8 sm:pb-8">
-      <h2
+      <h1
         class="ml-[0.85rem] text-center text-[1.7rem] font-bold leading-loose tracking-wider text-text-secondary sm:ml-4 sm:text-4xl"
       >
         作る、食べる、書く。
-      </h2>
+      </h1>
       <div
         class="mx-auto mt-6 flex w-36 flex-col items-center sm:mt-10 sm:w-48"
       >

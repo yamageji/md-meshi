@@ -62,11 +62,11 @@ definePageMeta({
 
 <template>
   <main>
-    <h2
+    <h1
       class="flex flex-col gap-3 pb-2 text-2xl tracking-wide text-text-secondary after:h-[2px] after:w-20 after:rounded-md after:bg-text-tertiary sm:gap-4 sm:text-3xl sm:after:w-24"
     >
       {{ data.title }}
-    </h2>
+    </h1>
 
     <div class="mt-4 flex flex-col items-start gap-6 sm:mt-6 sm:flex-row">
       <div class="col-start-1 row-start-1 w-full sm:w-64 sm:shrink-0">
