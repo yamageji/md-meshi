@@ -33,7 +33,7 @@ useHead({
       class="sticky top-0 z-50 -mx-4 grow-0 border-b border-border-secondary bg-gray-50/80 px-4 backdrop-blur-lg md:-mx-8 md:px-8"
     >
       <div class="mx-auto max-w-5xl">
-        <TheHeader />
+        <TheHeader top-heading />
         <div class="px-1 pt-2 sm:pt-3">
           <RecipeNavigation />
         </div>
