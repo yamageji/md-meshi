@@ -19,13 +19,16 @@ const props = defineProps<Props>();
       <NuxtLink :to="content._path">
         <div class="rounded-md p-2">
           <div class="flex gap-3 sm:gap-4">
-            <figure v-if="content.photo" class="shrink-0">
+            <figure
+              v-if="content.photo"
+              class="min-h-full w-24 shrink-0 sm:w-32"
+            >
               <img
                 height="128"
                 width="128"
                 :src="`/images/small/s-${content.photo}`"
                 :alt="`写真：${content.title}`"
-                class="min-h-full w-24 rounded-md object-cover drop-shadow sm:w-32"
+                class="rounded-md object-cover drop-shadow"
               />
             </figure>
 
