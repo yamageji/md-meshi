@@ -1,10 +1,8 @@
-import { defineNuxtConfig } from 'nuxt';
-
 const title = 'markdown飯';
 const description =
   'markdown飯はレシピ日記です。作った料理のレシピと日記を掲載しています。コンテンツ管理に"Nuxt Content v2"を利用して、markdown書式で記事を書いています。';
 
-export default defineNuxtConfig({
+export default {
   app: {
     head: {
       htmlAttrs: {
@@ -18,6 +16,7 @@ export default defineNuxtConfig({
           content: description,
         },
       ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
 
@@ -51,4 +50,4 @@ export default defineNuxtConfig({
       googleAnalytics: '',
     },
   },
-});
+};
