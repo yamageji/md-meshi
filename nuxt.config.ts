@@ -20,10 +20,6 @@ export default {
     },
   },
 
-  typescript: {
-    strict: true,
-  },
-
   css: ['@/assets/css/main.css'],
 
   modules: [
