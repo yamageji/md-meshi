@@ -27,6 +27,7 @@ const aboutContents = [
 
 <template>
   <main class="grow py-8 leading-relaxed">
+    <OgpImage ogp-title="test" image="/recipe/2022-06-19" />
     <div class="rounded-lg pb-8 sm:pb-8">
       <h1
         class="ml-[0.85rem] text-center text-[1.7rem] font-bold leading-loose tracking-wider text-text-secondary sm:ml-4 sm:text-4xl"
