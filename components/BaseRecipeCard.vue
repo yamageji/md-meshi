@@ -7,6 +7,8 @@ type Props = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<Props>();
+
+const cloudinary = 'https://res.cloudinary.com/dxqzhe7v1/image/upload';
 </script>
 
 <template>
@@ -19,15 +21,16 @@ const props = defineProps<Props>();
       <NuxtLink :to="content._path">
         <div class="rounded-md p-2">
           <div class="flex gap-3 sm:gap-4">
-            <figure
-              v-if="content.photo"
-              class="min-h-full w-24 shrink-0 sm:w-32"
-            >
+            <figure class="min-h-full w-24 shrink-0 sm:w-32">
               <img
                 height="128"
                 width="128"
-                :src="`/images/small/s-${content.photo}`"
+                :src="`${cloudinary}/c_scale,w_128/ogp/${content.cookedDate}.jpg`"
                 :alt="`写真：${content.title}`"
+                :srcset="`${cloudinary}/c_scale,w_256/ogp/${content.cookedDate}.jpg 256w, ${cloudinary}/c_scale,w_198/ogp/${content.cookedDate}.jpg 198w, ${cloudinary}/c_scale,w_128/ogp/${content.cookedDate}.jpg 128w, ${cloudinary}/c_scale,w_96/ogp/${content.cookedDate}.jpg 96w`"
+                size="(max-width: 539px) 96px"
+                loading="lazy"
+                decoding="async"
                 class="rounded-md object-cover drop-shadow"
               />
             </figure>

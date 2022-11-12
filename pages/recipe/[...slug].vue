@@ -27,9 +27,10 @@ const pageTitle = computed(() => data.value.title);
 const uri = 'https://md-meshi.com';
 
 const ogUrl = computed(() => `${uri}${formatPath.value}`);
+const cloudinary = 'https://res.cloudinary.com/dxqzhe7v1/image/upload';
 const ogImage = computed(
   () =>
-    `https://res.cloudinary.com/dxqzhe7v1/image/upload/l_ogp:${params.slug[0]}/c_scale,h_500,w_500/r_29/fl_layer_apply,g_north_west,x_65,y_64/co_rgb:44403C,c_fit,h_258,w_494,l_text:ogp:NotoSansJP-Medium.otf_64_normal_left:${pageTitle.value}/fl_layer_apply,g_north_west,x_608,y_180/co_rgb:44403C,l_text:ogp:NotoSansJP-Bold.otf_32_normal_left:${params.slug[0]}/fl_layer_apply,g_north_west,x_630,y_101/ogp/base.jpg`
+    `${cloudinary}/l_ogp:${params.slug[0]}/c_scale,h_500,w_500/r_29/fl_layer_apply,g_north_west,x_65,y_64/co_rgb:44403C,c_fit,h_258,w_494,l_text:ogp:NotoSansJP-Medium.otf_64_normal_left:${pageTitle.value}/fl_layer_apply,g_north_west,x_608,y_180/co_rgb:44403C,l_text:ogp:NotoSansJP-Bold.otf_32_normal_left:${params.slug[0]}/fl_layer_apply,g_north_west,x_630,y_101/ogp/base.jpg`
 );
 
 useHead({
@@ -77,8 +78,11 @@ definePageMeta({
         <img
           width="490"
           height="490"
-          :src="`/images/${data.photo}`"
+          :src="`${cloudinary}/c_scale,w_490/ogp/${data.cookedDate}.jpg`"
           :alt="`写真：${data.title}`"
+          :srcset="`${cloudinary}/c_scale,w_980/ogp/${data.cookedDate}.jpg 980w, ${cloudinary}/c_scale,w_512/ogp/${data.cookedDate}.jpg 512w, ${cloudinary}/c_scale,w_490/ogp/${data.cookedDate}.jpg 490w, ${cloudinary}/c_scale,w_256/ogp/${data.cookedDate}.jpg 256w`"
+          size="(max-width: 539px) 490px, 256px"
+          decoding="async"
           class="rounded-md object-cover shadow-md shadow-shadow-primary"
         />
       </div>
