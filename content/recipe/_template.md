@@ -1,6 +1,5 @@
 ---
 title: ""
-photo: "0000-00-00.webp"
 # YYYY-MM-DD
 cookedDate: "0000-00-00"
 # minute
