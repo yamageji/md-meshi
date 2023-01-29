@@ -5,8 +5,8 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import {
   ChevronDownIcon,
   CheckIcon,
-  ExternalLinkIcon,
-} from '@heroicons/vue/solid';
+  ArrowRightOnRectangleIcon,
+} from '@heroicons/vue/20/solid';
 
 type Props = {
   pageCategories: Array<PageCategory>;
@@ -103,7 +103,7 @@ const selectedCategory = computed(() => {
                 {{ category.name }}
               </span>
               <span class="absolute inset-y-0 right-2 flex items-center">
-                <ExternalLinkIcon
+                <ArrowRightOnRectangleIcon
                   v-show="!category.isInternal"
                   class="h-5 w-5 text-text-secondary"
                   aria-hidden="true"

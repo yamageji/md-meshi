@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
           </div>
         </NuxtLink>
       </h1>
+
       <div v-else class="flex h-full items-center">
         <NuxtLink to="/" class="flex h-full items-center">
           <div class="w-40 sm:w-48">
@@ -34,6 +35,7 @@ const props = withDefaults(defineProps<Props>(), {
           </div>
         </NuxtLink>
       </div>
+
       <HeaderNavigation />
     </div>
   </header>

@@ -38,7 +38,7 @@ export default {
   },
 
   build: {
-    transpile: ['@headlessui/vue', '@heroicons/vue'],
+    transpile: ['@heroicons/vue'],
   },
 
   runtimeConfig: {
