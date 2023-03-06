@@ -26,10 +26,10 @@ export default {
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxt/image-edge',
+    '@nuxtjs/google-fonts',
     // '@nuxtjs/robots',
   ],
 
-  buildModules: ['@nuxtjs/google-fonts'],
   googleFonts: {
     families: {
       'Noto Sans JP': [400, 700],
