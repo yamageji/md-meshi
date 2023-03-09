@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { RecipeContent } from '@/types/recipe-content';
 
-const { params, path } = useRoute();
-const currentPage = computed(() => (params.slug ? Number(params.slug[0]) : 1));
+const { params } = useRoute();
+const currentPage = 1;
 const limit = 10;
 
 const { data } = await useAsyncData(`list-page-${params.slug}`, () => {
   return queryContent<RecipeContent>('recipe')
     .where({ _partial: false })
     .sort({ cookedDate: -1 })
-    .skip(limit * (currentPage.value - 1))
+    .skip(limit * (currentPage - 1))
     .limit(limit)
     .find();
 });
@@ -31,10 +31,7 @@ for (let i = 0; i < pageLength; i += limit) {
 
 <template>
   <div>
-    <SeoMeat
-      :page-title="`レシピ一覧 － page${currentPage}`"
-      :page-path="path"
-    />
+    <SeoMeat />
     <NuxtLayout>
       <main>
         <BaseRecipeCard :data="data!" />

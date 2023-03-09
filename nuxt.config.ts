@@ -1,48 +1,31 @@
-const title = 'markdown飯';
-const description =
-  'markdown飯はレシピ日記です。作った料理のレシピと日記を掲載しています。コンテンツ管理に"Nuxt Content v2"を利用して、markdown書式で記事を書いています。';
-
-export default {
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: 'ja',
-        prefix: 'og: http://ogp.me/ns#',
-      },
-      title,
-      meta: [
-        {
-          name: 'description',
-          content: description,
-        },
-      ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    },
-  },
-
-  css: ['@/assets/css/main.css'],
-
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
+    '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
-    '@nuxt/image-edge',
     '@nuxtjs/google-fonts',
-    // '@nuxtjs/robots',
+    'nuxt-headlessui',
   ],
+  content: {
+    documentDriven: true,
+  },
   googleFonts: {
     families: {
       'Noto Sans JP': [400, 700],
       'Work Sans': [400, 500, 700],
     },
   },
-
-  build: {
-    transpile: ['@heroicons/vue'],
+  headlessui: {
+    prefix: 'Headless',
   },
-
-  runtimeConfig: {
-    public: {
-      googleAnalytics: '',
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml'],
     },
   },
-};
+});

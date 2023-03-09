@@ -7,7 +7,7 @@ const { data } = await useAsyncData('monthly-archive', () => {
     .sort({ cookedDate: -1 })
     .find();
 });
-const allDate = data.value.map((value) => value.cookedDate);
+const allDate = data.value?.map((value) => value.cookedDate);
 // any後で直す
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useGroupBy = (contents: any) => {

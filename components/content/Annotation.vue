@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import IconMemo from '../Icon/IconMemo.vue';
 type Props = {
   type: 'memo' | 'point';
 };
@@ -23,12 +22,6 @@ const borderColorClass = (type: string) => {
 <template>
   <div :class="[type]">
     <h2 class="inline-flex items-center justify-center gap-1 text-lg">
-      <BaseIcon
-        :icon-name="props.type"
-        class="mr-1 h-8 w-8 rounded-md bg-accent-primary p-1.5 text-white"
-      >
-        <IconMemo />
-      </BaseIcon>
       {{ props.type }}
     </h2>
 

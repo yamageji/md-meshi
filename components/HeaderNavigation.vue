@@ -8,7 +8,7 @@ export type PageCategory = {
 const route = useRoute();
 
 const pageCategories: Array<PageCategory> = [
-  { name: 'recipe', path: '/recipe', isInternal: true },
+  { name: 'recipe', path: '/', isInternal: true },
   { name: 'about', path: '/about', isInternal: true },
 ];
 const outerLink: Array<PageCategory> = [
@@ -21,7 +21,9 @@ const outerLink: Array<PageCategory> = [
 
 // active-classのみで処理したいが上手くいかないので応急処置
 const customActiveClass = (name: string) =>
-  route.path.split('/')[1] === name
+  route.path === '/' && name === 'recipe'
+    ? 'text-text-accent-primary bg-surface-secondary'
+    : route.path.split('/')[1] === name
     ? 'text-text-accent-primary bg-surface-secondary'
     : '';
 </script>
@@ -39,7 +41,6 @@ const customActiveClass = (name: string) =>
         >
           <NuxtLink
             :to="category.path"
-            active-class="text-text-accent-primary bg-surface-secondary"
             :class="customActiveClass(category.name)"
             class="rounded-full py-1.5 px-3 font-bold tracking-wide duration-150 hover:bg-surface-secondary"
           >

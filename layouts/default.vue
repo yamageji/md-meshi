@@ -1,30 +1,3 @@
-<script lang="ts" setup>
-const ogTitle = 'markdown飯';
-const ogDescription =
-  'markdown飯はレシピ日記です。作った料理のレシピと日記を掲載しています。';
-const uri = 'https://md-meshi.com';
-useHead({
-  meta: [
-    {
-      property: 'og:site_name',
-      content: ogTitle,
-    },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: uri },
-    { property: 'og:title', content: ogTitle },
-    {
-      property: 'og:description',
-      content: ogDescription,
-    },
-    {
-      property: 'og:image',
-      content: uri + '/md-meshi-ogp.png',
-    },
-    { name: 'twitter:card', content: 'summary' },
-  ],
-});
-</script>
-
 <template>
   <div
     class="flex min-h-screen flex-col bg-surface-primary px-4 font-noto text-text-primary md:px-8"
@@ -47,7 +20,7 @@ useHead({
         <slot />
       </div>
       <div class="mt-16 basis-3/12 md:mt-5">
-        <TheAside class="md:top-44" />
+        <TheAside class="md:top-[11.8rem]" />
       </div>
     </div>
 
@@ -56,3 +29,14 @@ useHead({
     </div>
   </div>
 </template>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.1s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>

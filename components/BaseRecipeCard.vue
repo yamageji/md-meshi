@@ -4,9 +4,7 @@ import { RecipeContent } from '@/types/recipe-content';
 type Props = {
   data: RecipeContent[];
 };
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = defineProps<Props>();
+defineProps<Props>();
 
 const cloudinary = 'https://res.cloudinary.com/dxqzhe7v1/image/upload';
 </script>

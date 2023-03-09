@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { RecipeContent } from '@/types/recipe-content';
 
-import BaseHeadline from '~~/components/BaseHeadline.vue';
+import BaseHeadline from '@/components/BaseHeadline.vue';
 
-const { params } = useRoute();
+const { params, path } = useRoute();
+
 const targetMonth = computed(() => params.slug[0]);
 
 const { convertedJapanese } = useFormatDate(targetMonth.value);
@@ -16,18 +17,21 @@ const { data } = await useAsyncData(`monthly-${params.slug}`, () => {
     .find();
 });
 
-useHead({
-  title: `${convertedJapanese.value} | markdown飯`,
-});
-
-definePageMeta({
-  layout: 'individual',
-});
+const layout = 'individual';
 </script>
 
 <template>
-  <main>
-    <BaseHeadline>{{ convertedJapanese }}</BaseHeadline>
-    <BaseRecipeCard :data="data" />
-  </main>
+  <div>
+    <SeoMeat
+      :page-title="`${convertedJapanese}`"
+      :page-description="`${convertedJapanese}のレシピの一覧ページです。`"
+      :page-path="path"
+    />
+    <NuxtLayout :name="layout">
+      <main>
+        <BaseHeadline>{{ convertedJapanese }}</BaseHeadline>
+        <BaseRecipeCard :data="data!" />
+      </main>
+    </NuxtLayout>
+  </div>
 </template>

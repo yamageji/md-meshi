@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RecipeContent } from '@/types/recipe-content';
-
-import BaseHeadline from '~~/components/BaseHeadline.vue';
+import BaseHeadline from '@/components/BaseHeadline.vue';
 
 const categories = {
   rice: 'ごはんもの',
@@ -14,7 +13,7 @@ const categories = {
   others: 'その他',
 };
 
-const { params } = useRoute();
+const { params, path } = useRoute();
 const targetCategory = computed(() => params.slug[0]);
 const categoryText = computed(() => categories[targetCategory.value]);
 const currentPage = computed(() => Number(params.slug[1]));
@@ -40,7 +39,7 @@ const { data: categoryRecipeIds } = await useAsyncData(
       .find();
   }
 );
-const categoryRecipeLength = categoryRecipeIds.value.length;
+const categoryRecipeLength = categoryRecipeIds.value!.length;
 
 const pager: number[] = [];
 const pageLength = Math.floor(categoryRecipeLength);
@@ -48,33 +47,36 @@ for (let i = 0; i < pageLength; i += limit) {
   pager.push(i / limit);
 }
 
-useHead({
-  title: `${categoryText.value} | markdown飯`,
-});
-
-definePageMeta({
-  layout: 'individual',
-});
+const layout = 'individual';
 </script>
 
 <template>
-  <main>
-    <BaseHeadline>{{ categoryText }}</BaseHeadline>
-    <BaseRecipeCard v-if="data.length" :data="data" />
-    <div
-      v-else
-      class="mt-4 flex h-28 items-center justify-center rounded-md border-2 border-dashed border-border-primary p-4 text-lg sm:h-36"
-    >
-      「{{ categoryText }}」のレシピがみつかりませんでした。
-    </div>
+  <div>
+    <SeoMeat
+      :page-title="`${categoryText}`"
+      :page-description="`${categoryText}レシピの一覧ページです。`"
+      :page-path="path"
+    />
+    <NuxtLayout :name="layout">
+      <main>
+        <BaseHeadline>{{ categoryText }}</BaseHeadline>
+        <BaseRecipeCard v-if="data?.length" :data="data" />
+        <div
+          v-else
+          class="mt-4 flex h-28 items-center justify-center rounded-md border-2 border-dashed border-border-primary p-4 text-lg sm:h-36"
+        >
+          「{{ categoryText }}」のレシピがみつかりませんでした。
+        </div>
 
-    <div class="mt-12">
-      <BasePagination
-        :pager="pager"
-        type="category"
-        :current="currentPage"
-        :category="targetCategory"
-      />
-    </div>
-  </main>
+        <div class="mt-12">
+          <BasePagination
+            :pager="pager"
+            type="category"
+            :current="currentPage"
+            :category="targetCategory"
+          />
+        </div>
+      </main>
+    </NuxtLayout>
+  </div>
 </template>

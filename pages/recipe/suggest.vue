@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RecipeContent } from '@/types/recipe-content';
 
+const { path } = useRoute();
+
 const { data } = await useAsyncData('suggest', () => {
   return queryContent<RecipeContent>('recipe')
     .where({ _partial: false })
@@ -14,12 +16,20 @@ useHead({
 });
 definePageMeta({
   title: 'おすすめ',
-  layout: 'base',
 });
 </script>
 
 <template>
-  <main>
-    <BaseRecipeCard :data="data" />
-  </main>
+  <div>
+    <SeoMeat
+      page-title="おすすめ"
+      page-description="おすすめレシピの一覧ページです。"
+      :page-path="path"
+    />
+    <NuxtLayout>
+      <main>
+        <BaseRecipeCard :data="data!" />
+      </main>
+    </NuxtLayout>
+  </div>
 </template>

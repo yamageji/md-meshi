@@ -31,7 +31,7 @@ const directionBorderClass = computed(() => {
 </script>
 
 <template>
-  <div
+  <nav
     :class="directionClass"
     class="group items-stretch rounded-md border border-border-tertiary text-sm duration-150 hover:border-accent-primary"
   >
@@ -46,7 +46,7 @@ const directionBorderClass = computed(() => {
             icon-name="left-arrow"
             :width="18"
             :height="18"
-            class="duration-150 group-hover:text-text-accent-primary"
+            class="text-text-secondary duration-150 group-hover:text-text-accent-primary"
           >
             <IconLeftArrow v-if="props.direction === 'prev'" />
             <IconRightArrow v-else-if="props.direction === 'next'" />
@@ -59,5 +59,5 @@ const directionBorderClass = computed(() => {
         </p>
       </div>
     </NuxtLink>
-  </div>
+  </nav>
 </template>

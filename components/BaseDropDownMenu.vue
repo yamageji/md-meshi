@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { PageCategory } from './HeaderNavigation.vue';
 
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import {
   ChevronDownIcon,
   CheckIcon,
-  ArrowRightOnRectangleIcon,
-} from '@heroicons/vue/20/solid';
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/vue/24/solid';
 
 type Props = {
   pageCategories: Array<PageCategory>;
@@ -37,9 +36,9 @@ const selectedCategory = computed(() => {
     <span v-if="selectedCategory" class="text-sm text-text-secondary sm:hidden"
       >/</span
     >
-    <Menu v-slot="{ open }" as="div">
+    <HeadlessMenu v-slot="{ open }" as="div">
       <div class="relative">
-        <MenuButton
+        <HeadlessMenuButton
           class="group w-full cursor-pointer py-2 pr-7 text-[0.9375rem] font-bold"
         >
           <span class="block">{{ selectedCategory.name }}</span>
@@ -57,7 +56,7 @@ const selectedCategory = computed(() => {
               aria-hidden="true"
             />
           </span>
-        </MenuButton>
+        </HeadlessMenuButton>
       </div>
 
       <transition
@@ -68,11 +67,11 @@ const selectedCategory = computed(() => {
         leave-from-class="transform scale-100 opacity-100"
         leave-to-class="transform scale-95 opacity-0"
       >
-        <MenuItems
+        <HeadlessMenuItems
           class="absolute mt-1 rounded-md border border-border-secondary bg-surface-secondary p-2 shadow-lg"
           as="nav"
         >
-          <MenuItem
+          <HeadlessMenuItem
             v-for="category in linkCategories"
             v-slot="{ active }"
             :key="category.name"
@@ -103,16 +102,16 @@ const selectedCategory = computed(() => {
                 {{ category.name }}
               </span>
               <span class="absolute inset-y-0 right-2 flex items-center">
-                <ArrowRightOnRectangleIcon
+                <ArrowTopRightOnSquareIcon
                   v-show="!category.isInternal"
                   class="h-5 w-5 text-text-secondary"
                   aria-hidden="true"
                 />
               </span>
             </NuxtLink>
-          </MenuItem>
-        </MenuItems>
+          </HeadlessMenuItem>
+        </HeadlessMenuItems>
       </transition>
-    </Menu>
+    </HeadlessMenu>
   </div>
 </template>
