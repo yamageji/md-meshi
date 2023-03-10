@@ -26,5 +26,8 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.16"
+  },
+  "volta": {
+    "node": "17.9.1"
   }
 }

@@ -53,7 +53,7 @@ const layout = 'individual';
 <template>
   <div>
     <SeoMeat
-      :page-title="`${categoryText}`"
+      :page-title="`${categoryText} - page${currentPage}`"
       :page-description="`${categoryText}レシピの一覧ページです。`"
       :page-path="path"
     />

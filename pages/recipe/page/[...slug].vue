@@ -32,7 +32,7 @@ for (let i = 0; i < pageLength; i += limit) {
 <template>
   <div>
     <SeoMeat
-      :page-title="`レシピ一覧 － page${currentPage}`"
+      :page-title="`レシピ一覧 - page${currentPage}`"
       :page-path="path"
     />
     <NuxtLayout>

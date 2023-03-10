@@ -1,49 +1,53 @@
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { serverQueryContent } from '#content/server';
 
 const BASE_URL = 'https://md-meshi.com';
 
+// content以外のURLリスト（動的に取得できるようにしたい...）
+const pageList = [
+  '',
+  'about',
+  'recipe/suggest',
+
+  'recipe/page/1',
+  'recipe/page/2',
+  'recipe/page/3',
+  'recipe/page/4',
+
+  'recipe/monthly/2023-01',
+  'recipe/monthly/2022-12',
+  'recipe/monthly/2022-11',
+  'recipe/monthly/2022-10',
+  'recipe/monthly/2022-09',
+  'recipe/monthly/2022-08',
+  'recipe/monthly/2022-07',
+  'recipe/monthly/2022-06',
+
+  '/recipe/category/rice/1',
+  '/recipe/category/noodles/1',
+  '/recipe/category/noodles/1',
+  '/recipe/category/soup/1',
+  '/recipe/category/vegetable/1',
+  '/recipe/category/vegetable/2',
+  '/recipe/category/seafood/1',
+  '/recipe/category/meat/1',
+  '/recipe/category/meat/2',
+  '/recipe/category/egg/1',
+  '/recipe/category/others/1',
+];
+
 export default defineEventHandler(async (event) => {
   const sitemap = new SitemapStream({ hostname: BASE_URL });
 
-  const docs = await serverQueryContent(event).find();
-  for (const doc of docs) {
-    sitemap.write({ url: doc._path, changefreq: 'monthly' });
+  for (const doc of pageList) {
+    sitemap.write({ url: doc, changefreq: 'weekly' });
   }
 
-  const staticEndpoints = getStaticEndpoints();
-  for (const staticEndpoint of staticEndpoints) {
-    sitemap.write({ url: staticEndpoint, changefreq: 'monthly' });
+  const docs = await serverQueryContent(event).find();
+  for (const doc of docs) {
+    sitemap.write({ url: doc._path, changefreq: 'weekly' });
   }
 
   sitemap.end();
   return streamToPromise(sitemap);
 });
-
-function getStaticEndpoints(): string[] {
-  const __dirname = dirname(fileURLToPath(import.meta.url));
-  const files = getFiles(`${__dirname}/../../pages`);
-  return files
-    .filter((file) => !file.includes('slug')) // exclude dynamic content
-    .map((file) => file.split('pages')[1])
-    .map((file) => {
-      return file.endsWith('index.vue')
-        ? file.split('/index.vue')[0]
-        : file.split('.vue')[0];
-    });
-}
-
-/**
- * recursively get all files from /pages folder
- */
-function getFiles(dir: string): string[] {
-  const dirents = fs.readdirSync(dir, { withFileTypes: true });
-  const files = dirents.map((dirent) => {
-    const res = resolve(dir, dirent.name);
-    return dirent.isDirectory() ? getFiles(res) : res;
-  });
-  return files.flat();
-}

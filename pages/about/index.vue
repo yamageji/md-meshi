@@ -16,12 +16,18 @@ const aboutContents = [
   },
 ];
 
+const { path } = useRoute();
+
 const layout = 'about';
 </script>
 
 <template>
   <div>
-    <SeoMeat />
+    <SeoMeat
+      :page-title="'about'"
+      :page-description="'サイトの説明ページです。markdown飯はレシピ日記で、作った料理と日々の雑感を記録しています。'"
+      :page-path="path"
+    />
     <NuxtLayout :name="layout">
       <main class="grow py-8 leading-relaxed">
         <div class="rounded-lg pb-8 sm:pb-8">

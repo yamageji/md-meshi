@@ -6,16 +6,9 @@ const { path } = useRoute();
 const { data } = await useAsyncData('suggest', () => {
   return queryContent<RecipeContent>('recipe')
     .where({ _partial: false })
-    .where({ evaluation: { $gte: 4 } })
+    .where({ evaluation: { $gte: 5 } })
     .sort({ cookedDate: -1 })
     .find();
-});
-
-useHead({
-  title: 'おすすめ | markdown飯',
-});
-definePageMeta({
-  title: 'おすすめ',
 });
 </script>
 
