@@ -25,7 +25,7 @@ const layout = 'about';
   <div>
     <SeoMeat
       :page-title="'about'"
-      :page-description="'サイトの説明ページです。markdown飯はレシピ日記で、作った料理と日々の雑感を記録しています。'"
+      :page-description="'本サイトの説明ページです。markdown飯はレシピ日記で、作った料理と日々の雑感を記録しています。'"
       :page-path="path"
     />
     <NuxtLayout :name="layout">
