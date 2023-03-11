@@ -19,6 +19,9 @@ const aboutContents = [
 const { path } = useRoute();
 
 const layout = 'about';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>

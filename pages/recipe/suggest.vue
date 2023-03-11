@@ -10,6 +10,11 @@ const { data } = await useAsyncData('suggest', () => {
     .sort({ cookedDate: -1 })
     .find();
 });
+
+const layout = 'default';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>
@@ -19,7 +24,7 @@ const { data } = await useAsyncData('suggest', () => {
       page-description="おすすめレシピの一覧ページです。"
       :page-path="path"
     />
-    <NuxtLayout>
+    <NuxtLayout :name="layout">
       <main>
         <BaseRecipeCard :data="data!" />
       </main>

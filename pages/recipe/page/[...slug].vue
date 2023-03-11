@@ -27,6 +27,11 @@ const pageLength = Math.floor(allRecipeLength);
 for (let i = 0; i < pageLength; i += limit) {
   pager.push(i / limit);
 }
+
+const layout = 'default';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>
@@ -35,7 +40,7 @@ for (let i = 0; i < pageLength; i += limit) {
       :page-title="`レシピ一覧 - page${currentPage}`"
       :page-path="path"
     />
-    <NuxtLayout>
+    <NuxtLayout :name="layout">
       <main>
         <BaseRecipeCard :data="data!" />
 

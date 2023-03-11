@@ -11,6 +11,9 @@ const pageImage = computed(
 );
 
 const layout = 'recipe';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>

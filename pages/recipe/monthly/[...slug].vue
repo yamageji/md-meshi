@@ -18,6 +18,9 @@ const { data } = await useAsyncData(`monthly-${params.slug}`, () => {
 });
 
 const layout = 'individual';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>

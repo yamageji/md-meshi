@@ -27,12 +27,17 @@ const pageLength = Math.floor(allRecipeLength);
 for (let i = 0; i < pageLength; i += limit) {
   pager.push(i / limit);
 }
+
+const layout = 'default';
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>
   <div>
     <SeoMeat />
-    <NuxtLayout>
+    <NuxtLayout :name="layout">
       <main>
         <BaseRecipeCard :data="data!" />
 
