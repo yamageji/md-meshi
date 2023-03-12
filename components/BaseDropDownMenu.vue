@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { PageCategory } from './HeaderNavigation.vue';
-
 import {
   ChevronDownIcon,
   CheckIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/vue/24/solid';
+
+import { PageCategory } from './HeaderNavigation.vue';
 
 type Props = {
   pageCategories: Array<PageCategory>;
