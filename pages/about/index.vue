@@ -20,6 +20,7 @@ const { path } = useRoute();
 
 const layout = 'about';
 definePageMeta({
+  documentDriven: false,
   layout: false,
 });
 </script>

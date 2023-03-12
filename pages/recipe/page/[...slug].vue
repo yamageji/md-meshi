@@ -30,6 +30,7 @@ for (let i = 0; i < pageLength; i += limit) {
 
 const layout = 'default';
 definePageMeta({
+  documentDriven: false,
   layout: false,
 });
 </script>

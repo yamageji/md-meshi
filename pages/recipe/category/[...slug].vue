@@ -49,6 +49,7 @@ for (let i = 0; i < pageLength; i += limit) {
 
 const layout = 'individual';
 definePageMeta({
+  documentDriven: false,
   layout: false,
 });
 </script>

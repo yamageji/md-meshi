@@ -13,6 +13,7 @@ const { data } = await useAsyncData('suggest', () => {
 
 const layout = 'default';
 definePageMeta({
+  documentDriven: false,
   layout: false,
 });
 </script>
