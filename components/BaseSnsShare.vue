@@ -8,7 +8,7 @@ const props = defineProps<Props>();
 const { path } = useRoute();
 const formatPath = computed(() => path.replace(/\/$/, ''));
 
-const url = `https://md-meshi.com${formatPath.value}/`;
+const url = `https://md-meshi.pages.dev${formatPath.value}/`;
 // 各記事のタイトルを取得
 const textAndHashTag = encodeURIComponent(`${props.text} #mdmeshi`);
 const twitterURL = computed(

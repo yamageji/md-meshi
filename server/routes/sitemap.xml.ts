@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { serverQueryContent } from '#content/server';
 
-const BASE_URL = 'https://md-meshi.com';
+const BASE_URL = 'https://md-meshi.pages.dev';
 
 // content以外のURLリスト（動的に取得できるようにしたい...）
 const pageList = [
