@@ -99,7 +99,7 @@ definePageMeta({
                 <li
                   class="flex h-6 w-6 cursor-pointer items-center justify-center fill-current opacity-60 transition-opacity duration-200 ease-in-out hover:opacity-100"
                 >
-                  <NuxtLink to="https://github.com/K-shigehito">
+                  <NuxtLink to="https://github.com/yamageji">
                     <BaseIcon :width="22" :height="22" icon-name="github"
                       ><IconGithub
                     /></BaseIcon>
@@ -109,7 +109,7 @@ definePageMeta({
                 <li
                   class="flex h-6 w-6 cursor-pointer items-center justify-center fill-current opacity-60 transition-opacity duration-200 ease-in-out hover:opacity-100"
                 >
-                  <NuxtLink to="https://twitter.com/chabatake5">
+                  <NuxtLink to="https://twitter.com/yamageji">
                     <BaseIcon :width="22" :height="22" icon-name="twitter"
                       ><IconTwitter
                     /></BaseIcon>
